@@ -17,9 +17,11 @@
         <form method="post" action="{% url 'news-form' %}" enctype="multipart/form-data">
             {% csrf_token %}
             <label for="id_title">Título</label>
-            <input type="id_text" name="title" maxlength="200" required>
+            <input type="text" name="title" maxlength="200" required>
+
             <label for="id_content">Conteúdo</label>
-            <textarea name="id_content" required></textarea>
+            <textarea name="content" required></textarea>
+
             <label for="id_author">Autoria</label>
             <select name="author">
                 {% for user in users %}
@@ -27,7 +29,8 @@
                 {% endfor %}
             </select>
             <label for="id_created_at">Criado em</label>
-            <input type="id_date" name="created_at" required>
+            <input type="date" name="created_at" required>
+
             <label for="id_image">URL da Imagem</label>
             <input type="file" name="image">
             {% for category in categories %}
