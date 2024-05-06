@@ -13,9 +13,13 @@
     </header>
     <main>
         {% for new in news %}
-            <h2 class="news-title">{{ new.title }}</h2>
-            <span class="news-date">{{ new.created_at|date:"d/m/Y" }}</span>
-            <img src="{% static new.image.url %}" alt="{{ new.title }}">
+            <a href="{% url 'news-details-page' new.pk %}">
+                <div class="news-card">
+                    <h2 class="news-title">{{ new.title }}</h2>
+                    <span class="news-date">{{ new.created_at|date:"d/m/Y" }}</span>
+                    <img class="img" src="{% static new.image.url %}" alt="{{ new.title }}">
+                </div>
+            </a>
         {% endfor %}
     </main>
 {% endblock %}
