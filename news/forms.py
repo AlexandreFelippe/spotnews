@@ -2,7 +2,7 @@ from django import forms
 from .models import News
 
 
-class CreateCategoriesForm(forms.ModelForm):
+class CreateCategoriesForm(forms.Form):
     name = forms.CharField(max_length=200)
 
 
