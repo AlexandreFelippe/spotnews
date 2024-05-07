@@ -34,7 +34,7 @@
             <label for="id_image">URL da Imagem</label>
             <input type="file" name="image">
             {% for category in categories %}
-                <label for="id_categories">{{ category.name }}</label>
+                <label for="id_categories_{{category.id}}">{{ category.name }}</label>
                 <input type="checkbox" name="categories" value="{{ category.id }}">
             {% endfor %}
             <button type="submit">Salvar</button>
